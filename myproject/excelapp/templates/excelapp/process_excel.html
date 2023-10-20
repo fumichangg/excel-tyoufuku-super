@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>エクセル重複消し消し君</h1>
+    <p>エクセルをアップロードして指定のカラムで重複を削除します。</p>
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">エクセルを処理</button>
+    </form>
+
+    {% if output_link %}
+    <h2>結果</h2>
+    <p><a href="{{ output_link }}">こちら</a>から処理済みのエクセルをダウンロードできます。</p>
+    {% endif %}
+</div>
+{% endblock %}
