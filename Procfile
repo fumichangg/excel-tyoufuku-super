@@ -1,2 +1,2 @@
-DJANGO_SETTINGS_MODULE=myproject.settings
+web: python app.py
 
